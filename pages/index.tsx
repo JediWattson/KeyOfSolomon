@@ -1,5 +1,5 @@
-import PlanetCurrent from "../components/planet-current"
-import Header from "../components/header"
+import PlanetCurrent from "../src/planet-current"
+import Header from "../src/header"
 
 function HomePage() {
 	return (
@@ -7,8 +7,7 @@ function HomePage() {
 			<style jsx global>{`
 				body { 
 					background: #136394;
-					color: #c2ada7;
-
+					color: #c2ada7;					
 				}
 			`}</style>
 			<Header/>
@@ -16,8 +15,5 @@ function HomePage() {
 		</>
 	)
 }
-
-
-// background: "#136394"
 
 export default HomePage

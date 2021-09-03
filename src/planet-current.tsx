@@ -1,8 +1,14 @@
-import React from "react"
-import { formatInfo } from './helpers'
+import { Fragment, useEffect, useState } from "react"
+import { formatInfo, Info } from './helpers'
 
 function PlanetCurrent() {
-    let { day, hour, alignedHours, bestUsedFor } = formatInfo()
+    let [info, setInfo]  = useState<Info>(formatInfo())
+    let { day, hour, alignedHours, bestUsedFor, grouping } = info
+    
+    useEffect(()=>{
+        let infoInterval = setInterval(()=> setInfo(formatInfo()), 1000*60*30)        
+        return () => clearInterval(infoInterval)
+    }, [])
     return (
         <>
             <div 
@@ -31,15 +37,21 @@ function PlanetCurrent() {
             </div>
             <div 
                 style={{ 
-                    paddingTop: 32,
+                    padding: "32px 0",
                     width: "100%", 
                     display: "flex", 
                     justifyContent: "center", 
-                    textAlign: "center" 
                 }}
             >
                 <div style={{ maxWidth: 365 }}>
-                    <i>{ bestUsedFor }</i>                                    
+                    <i>{ bestUsedFor }</i>     
+                    <br /><br />                               
+                    {grouping.map(text => (
+                        <Fragment key={text} >
+                            <i>{ text }</i>
+                            <br />
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </>

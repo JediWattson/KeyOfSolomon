@@ -1,14 +1,20 @@
-import { Fragment, useEffect, useState } from "react"
-import { formatInfo, Info } from './helpers'
+import { Fragment } from "react"
+import { usePlanets } from './helpers'
 
-function PlanetCurrent() {
-    let [info, setInfo]  = useState<Info>(formatInfo())
-    let { day, hour, alignedHours, bestUsedFor, grouping } = info
-    
-    useEffect(()=>{
-        let infoInterval = setInterval(()=> setInfo(formatInfo()), 1000*60*30)        
-        return () => clearInterval(infoInterval)
-    }, [])
+function PlanetCurrent() {    
+    let { fetching, day, hour, bestUsedFor, grouping = [] } = usePlanets()    
+    if(fetching){
+        return (
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "space-between",                   
+            }}>
+                <h3>Determining time of sunrise...</h3>
+            </div>
+        )
+    }
     return (
         <>
             <div 
@@ -17,9 +23,7 @@ function PlanetCurrent() {
                     fontFamily: "Arial, Times",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    height: 240
+                    alignItems: "center"
                 }}
             >
                 <div>
@@ -29,10 +33,6 @@ function PlanetCurrent() {
                 <div>
                     <p>The planet this hour:</p>
                     <b>{ hour }</b>
-                </div>
-                <div>
-                    <p>The times will be aligned at:</p>
-                    <b>{ alignedHours }</b>
                 </div>
             </div>
             <div 

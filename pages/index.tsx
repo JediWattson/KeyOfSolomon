@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import PlanetCurrent from "../src/planet-current"
+import PlanetCurrent from "../src/info"
 import Header from "../src/header"
 
 function HomePage() {

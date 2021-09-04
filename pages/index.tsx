@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Container } from 'react-bootstrap'
 import PlanetCurrent from "../src/info"
 import Header from "../src/header"
 
@@ -12,7 +13,9 @@ function HomePage() {
 			<style jsx global>{`
 				body { 
 					background: #136394;
-					color: #c2ada7;					
+				}
+				p {
+					color: #FFF;
 				}
 			`}</style>
 			<Header/>

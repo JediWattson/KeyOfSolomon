@@ -1,12 +1,15 @@
 import styles from './styles.module.css'
+import { Navbar, Container } from 'react-bootstrap'
 
 function Header() {
     return (      
-        <div className={styles.container}>
-            <h1 className={styles.title}>
-                The Key of Solomondex
-            </h1>
-        </div>  
+        <Navbar bg="dark" variant="dark">
+            <Container className={styles.title}>
+                <Navbar.Brand>
+                    The Index of Solomon
+                </Navbar.Brand>
+            </Container>
+        </Navbar>
     )
 }
 

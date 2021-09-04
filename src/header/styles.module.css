@@ -1,14 +1,4 @@
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center
-}
-
 .title {
-    width: 365px;
-    text-align: center;
-    border-radius: 15px;
-    padding: 8px 0px;
     animation-iteration-count: infinite;
     animation-name: pulsate;
     animation-duration: 3s;
@@ -16,12 +6,12 @@
 
 @keyframes pulsate {
     from {
-        box-shadow: 0px 0px 22px 14px gold;
+        text-shadow: #e6de00 1px 0 3px;
     }
     50% {
-        box-shadow: 0px 0px 22px 6px gold;
+        text-shadow: #e6de00 1px 0 10px;
     }
     to {
-        box-shadow: 0px 0px 22px 14px gold;
+        text-shadow: #e6de00 1px 0 3px;        
     }
 }

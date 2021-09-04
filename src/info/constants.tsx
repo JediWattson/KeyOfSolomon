@@ -1,11 +1,11 @@
-export let planets = [
-    "ShBThAI, Shabbathai, Saturn",
-    "TzDQ, Tzedeq, Jupiter",
-    "MADIM, Madim, Mars",
-    "ShMSh, Shemesh, the Sun",
-    "NVGH, Nogah, Venus",
-    "KVKB, Kokav, Mercury",
-    "LBNH, Levanah, the Moon"
+export let planets = [    
+    { text: "ShBThAI, Shabbathai, Saturn", image: "https://nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/saturnvoyager.jpg?itok=I8QwuwZD"},
+    { text: "TzDQ, Tzedeq, Jupiter", image: "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22944.jpg" },
+    { text: "MADIM, Madim, Mars", image: "https://nasa.gov/sites/default/files/styles/full_width_feature/public/images/600154main_PIA14479_full.jpg" },
+    { text: "ShMSh, Shemesh, the Sun", image: "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/halloween_sun_2014_2k.jpg" },
+    { text: "NVGH, Nogah, Venus", image: "https://nasa.gov/sites/default/files/styles/full_width_feature/public/images/724700main_venus_full_full.jpg" },
+    { text: "KVKB, Kokav, Mercury", image: "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/press_photo_4.jpg" },
+    { text: "LBNH, Levanah, the Moon", image: "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/moon.4195_0.jpg" }
 ]
 
 export let weekIndexes = [3, 6, 2, 5, 1, 4, 0]

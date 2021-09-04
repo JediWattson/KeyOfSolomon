@@ -22,25 +22,27 @@ function PlanetCurrent() {
             <Row style={{ margin: "16px 0" }}>
                 <Col>
                     <Row className="justify-content-center">
-                        <Card text="light" bg="primary" style={{ padding: 0, marginBottom: 16 }}>
+                        <Card text="light" bg="secondary" style={{ padding: 0, marginBottom: 16 }}>
+                            <Card.Img variant="top" src={day.image} />
                             <Card.Header>
                                 Today's planet
                             </Card.Header>
                             <Card.Body>
                                 <Card.Title>
-                                    { day }
+                                    { day.text }
                                 </Card.Title>
                             </Card.Body>                    
                         </Card>
                     </Row>
                     <Row className="justify-content-center">
-                        <Card text="light" bg="primary" style={{ padding: 0 }}>
+                        <Card text="light" bg="secondary" style={{ padding: 0 }}>
+                            <Card.Img variant="top" src={hour.image} />
                             <Card.Header>
                                 This Hour's Planet
                             </Card.Header>
                             <Card.Body>
                                 <Card.Title>
-                                    { hour }
+                                    { hour.text }
                                 </Card.Title>
                             </Card.Body>                    
                         </Card>

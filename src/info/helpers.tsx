@@ -2,9 +2,16 @@ import { useEffect, useState } from "react"
 
 import { weekIndexes, grouping, groupingType, themes, planets } from './constants'
 
+
 export interface Info {
-    day?: string
-    hour?: string
+    day?: { 
+        text: string 
+        image: string 
+    }
+    hour?: { 
+        text: string 
+        image: string 
+    }
     grouping?: string[]
     bestUsedFor?: string
     fetching: boolean

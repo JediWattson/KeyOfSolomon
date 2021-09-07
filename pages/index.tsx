@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Container } from 'react-bootstrap'
 import PlanetCurrent from "../src/info"
 import Header from "../src/header"
 

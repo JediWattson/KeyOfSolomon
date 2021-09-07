@@ -42,11 +42,14 @@ export function usePlanets(): Info {
     let [sunrise, setSunrise] = useState<number>()
 
     let getSunrise = async (pos: GeolocationPosition) => {
+
         try {            
             let resp = await fetch(`https://api.sunrise-sunset.org/json?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&date=today&formatted=0`)
             let json = await resp.json()
-            let sunrise = new Date(json.results.sunrise)           
-            setSunrise(sunrise.getHours())                   
+
+            localStorage.setItem('sunrise', json.results.sunrise)
+            let sunrise = new Date(json.results.sunrise)         
+            setSunrise(sunrise.getHours())                               
         } catch (error) {
             console.error(error)
         }
@@ -55,10 +58,17 @@ export function usePlanets(): Info {
     useEffect(()=>{
         if(sunrise){
             setInfo(formatInfo(sunrise))
+            // TODO: set up inteval to work with the current milliseconds to change on new hour
             let infoInterval = setInterval(()=> setInfo(formatInfo(sunrise)), 1000*60*30)        
             return () => clearInterval(infoInterval)    
         } else {
-            navigator.geolocation.getCurrentPosition(getSunrise)
+            let localSunrise = localStorage.getItem('sunrise')
+            if(localSunrise){
+                let formattedSunrise = new Date(localSunrise)
+                setSunrise(formattedSunrise.getHours())
+            } else {
+                navigator.geolocation.getCurrentPosition(getSunrise, console.error)
+            }
         }
     }, [sunrise])
 

@@ -12,7 +12,7 @@ jobs:
             cd git/KeyOfSolomon
             npm run build
             npm run start
-          
+            
 workflows:
   version: 2
   build-and-deploy:

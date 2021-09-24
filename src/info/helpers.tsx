@@ -20,17 +20,20 @@ export interface Info {
 export function formatInfo(sunrise: number): Info {
     let date: Date = new Date()
     let day: number = weekIndexes[date.getDay()]
-    let hour: number = (day + (date.getHours() - sunrise))%planets.length
-
+    let currHours: number = date.getHours()
+    let hour: number = (day + (
+        currHours > sunrise ? (currHours - sunrise) : currHours
+    ))%planets.length
+      
     let group = grouping.reduce((acc: Array<string>, cur: groupingType) => {
-        if(cur.planets.includes(hour%planets.length))
+        if(cur.planets.includes(hour))
             acc.push(cur.text)
         return acc
     }, [])
-
+    
     return {
         day: planets[day],
-        hour: planets[hour%planets.length], 
+        hour: planets[hour], 
         bestUsedFor: themes[day],
         grouping: group,
         fetching: false

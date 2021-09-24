@@ -6,20 +6,20 @@ import Loading from './loading'
 
 function PlanetCurrent() {    
     let { fetching, day, hour, bestUsedFor, grouping = [] } = usePlanets()    
- 
+    
     if(fetching)
         return <Loading />
     
     return (        
         <Container>
             <Card text="light" bg="secondary" style={{ margin: "16px 0" }}>
-                <Card.Img variant="top" src={day.image} style={{ height: 200, objectFit: "cover" }} />
+                <Card.Img variant="top" src={day?.image} style={{ height: 200, objectFit: "cover" }} />
                 <Card.Header>
                     Today's planet
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>
-                        { day.text }
+                        { day?.text }
                     </Card.Title>
                     <Card.Text>
                         { bestUsedFor }
@@ -27,16 +27,16 @@ function PlanetCurrent() {
                 </Card.Body>                    
             </Card>
             <Card text="light" bg="secondary" >
-                <Card.Img variant="top" src={hour.image} style={{ height: 200, objectFit: "cover" }} />
+                <Card.Img variant="top" src={hour?.image} style={{ height: 200, objectFit: "cover" }} />
                 <Card.Header>
                     This Hour's Planet
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>
-                        { hour.text }
+                        { hour?.text }
                     </Card.Title>
                     <Card.Text>
-                        {grouping.map(text => (
+                        {grouping?.map(text => (
                             <Fragment key={text} >
                                 { text }
                                 <br /> 

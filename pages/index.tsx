@@ -6,7 +6,7 @@ function HomePage() {
 	return (
 		<>
 			<Head>
-				<title>Solomon's Index</title>
+				<title>{`Solomon's Index`}</title>
 				<meta name="theme-color" content="#136394" />
 				<link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/keys-line-style/120/key-19-512.png"/>
 			</Head>

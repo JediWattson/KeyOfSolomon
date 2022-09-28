@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Card, Container } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import { usePlanets } from './helpers'
 import Loading from './loading'
 
@@ -11,7 +11,7 @@ function PlanetCurrent() {
         return <Loading />
     
     return (        
-        <Container>
+        <>
             <Card text="light" bg="secondary" style={{ margin: "16px 0" }}>
                 <Card.Img variant="top" src={day?.image} style={{ height: 200, objectFit: "cover" }} />
                 <Card.Header>
@@ -45,7 +45,7 @@ function PlanetCurrent() {
                     </Card.Text>
                 </Card.Body>                    
             </Card>
-        </Container>
+        </>
     )
 }
 

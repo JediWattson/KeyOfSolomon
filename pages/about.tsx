@@ -14,7 +14,7 @@ const About = () => {
                     `}</Card.Text>
           <Card.Img
             src="/nicepictureItook.png"
-            alt="waterfalls behind a gate"
+            alt="A lot of sushi with wasabi and ginger"
           />
         </Card>
         <GithubLink />

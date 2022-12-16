@@ -1,12 +1,12 @@
-import PlanetCurrent from "../src/info"
-import Layout from "../src/layout"
+import PlanetCurrent from "../src/info";
+import Layout from "../src/layout";
 
 function HomePage() {
-	return (
-		<Layout>
-			<PlanetCurrent/>
-		</Layout>
-	)
+  return (
+    <Layout>
+      <PlanetCurrent />
+    </Layout>
+  );
 }
 
-export default HomePage
+export default HomePage;

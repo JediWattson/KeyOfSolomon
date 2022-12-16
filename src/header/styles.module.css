@@ -1,17 +1,15 @@
 .title {
-    animation-iteration-count: infinite;
-    animation-name: pulsate;
-    animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: pulsate;
+  animation-direction: alternate;
+  animation-duration: 3s;
 }
 
 @keyframes pulsate {
-    from {
-        text-shadow: #e6de00 1px 0 3px;
-    }
-    50% {
-        text-shadow: #e6de00 1px 0 10px;
-    }
-    to {
-        text-shadow: #e6de00 1px 0 3px;        
-    }
+  from {
+    text-shadow: #e6de00 1px 0 3px;
+  }
+  to {
+    text-shadow: #e6de00 1px 0 7px;
+  }
 }

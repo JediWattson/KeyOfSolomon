@@ -5,6 +5,8 @@ import Loading from "./loading";
 
 import styles from "./styles.module.css";
 
+const makeAlt = (text) => text && `Planet ${text.split(",")[2].trim()}`;
+
 function PlanetCurrent() {
   const { fetching, day, hour, bestUsedFor, grouping = [] } = usePlanets();
 
@@ -18,6 +20,7 @@ function PlanetCurrent() {
             className={styles["card-image"]}
             variant="top"
             src={day?.image}
+            alt={makeAlt(day?.text)}
           />
           <Card.Header>{`Today's planet`}</Card.Header>
           <Card.Body>
@@ -32,6 +35,7 @@ function PlanetCurrent() {
             className={styles["card-image"]}
             variant="top"
             src={hour?.image}
+            alt={makeAlt(hour?.text)}
           />
           <Card.Header>{`This Hour's Planet`}</Card.Header>
           <Card.Body>

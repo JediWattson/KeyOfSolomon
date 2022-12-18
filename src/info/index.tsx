@@ -1,57 +1,41 @@
-import { Fragment } from "react";
-import { Card, Row, Stack } from "react-bootstrap";
-import { usePlanets } from "./helpers";
-import Loading from "./loading";
+import Card from '../card';
+import Loading from "../loading";
 
-import styles from "./styles.module.css";
-
-const makeAlt = (text) => text && `Planet ${text.split(",")[2].trim()}`;
+import { usePlanets, makeAlt } from "./helpers";
 
 function PlanetCurrent() {
-  const { fetching, day, hour, bestUsedFor, grouping = [] } = usePlanets();
-
+  const { fetching, day, hour } = usePlanets();
   if (fetching) return <Loading />;
-
+  
   return (
-    <Stack gap={3}>
-      <Row>
-        <Card text="light" bg="secondary">
-          <Card.Img
-            className={styles["card-image"]}
-            variant="top"
-            src={day?.image}
-            alt={makeAlt(day?.text)}
-          />
-          <Card.Header>{`Today's planet`}</Card.Header>
-          <Card.Body>
-            <Card.Title>{day?.text}</Card.Title>
-            <Card.Text>{bestUsedFor}</Card.Text>
-          </Card.Body>
-        </Card>
-      </Row>
-      <Row>
-        <Card text="light" bg="secondary">
-          <Card.Img
-            className={styles["card-image"]}
-            variant="top"
-            src={hour?.image}
-            alt={makeAlt(hour?.text)}
-          />
-          <Card.Header>{`This Hour's Planet`}</Card.Header>
-          <Card.Body>
-            <Card.Title>{hour?.text}</Card.Title>
-            <Card.Text>
-              {grouping?.map((text) => (
-                <Fragment key={text}>
-                  {text}
-                  <br />
-                </Fragment>
-              ))}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Row>
-    </Stack>
+    <>
+      <Card
+        title="Today's planet"
+        img={{
+          height: day.height,
+          width: day.width,
+          src: `https://images-assets.nasa.gov/image/${day.nasaId}/${day.nasaId}~orig.jpg`,
+          alt: makeAlt(day?.text)
+        }}
+        footer={{
+          title: day.text,
+          subtitle: day.subtitle
+        }}
+      />
+      <Card
+        title="This Hour's Planet"
+        img={{
+          height: hour.height,
+          width: hour.width,
+          src: `https://images-assets.nasa.gov/image/${hour.nasaId}/${hour.nasaId}~orig.jpg`,
+          alt: makeAlt(hour?.text)
+        }}
+        footer={{
+          title: hour.text,
+          subtitle: hour.subtitle
+        }}
+      />
+    </>
   );
 }
 

@@ -1,39 +1,60 @@
 export let planets = [
   {
-    text: "ShBThAI, Shabbathai, Saturn",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/saturnvoyager.jpg?itok=I8QwuwZD",
+      "imgTitle": "Shadowing Saturn",
+      "height": 1018,
+      "width": 1018,
+      "description": "Shadowing Saturn",
+      "text": "ShBThAI, Shabbathai, Saturn",
+      "nasaId": "PIA08392"
   },
   {
-    text: "TzDQ, Tzedeq, Jupiter",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22944.jpg",
+      "imgTitle": "Hubble Captures Vivid Auroras in Jupiter’s Atmosphere",
+      "height": 2216,
+      "width": 2224,
+      "description": "Astronomers are using the NASA/ESA Hubble Space Telescope to study auroras — stunning light shows in a planet’s atmosphere — on the poles of the largest planet in the solar system, Jupiter. This observation program is supported by measurements made by NASA’s Juno spacecraft, currently on its way to Jupiter.\n\nJupiter, the largest planet in the solar system, is best known for its colorful storms, the most famous being the Great Red Spot. Now astronomers have focused on another beautiful feature of the planet, using Hubble's ultraviolet capabilities.\n\nThe extraordinary vivid glows shown in the new observations are known as auroras. They are created when high-energy particles enter a planet’s atmosphere near its magnetic poles and collide with atoms of gas. As well as producing beautiful images, this program aims to determine how various components of Jupiter’s auroras respond to different conditions in the solar wind, a stream of charged particles ejected from the sun.\n\nThis observation program is perfectly timed as NASA’s Juno spacecraft is currently in the solar wind near Jupiter and will enter the orbit of the planet in early July 2016. While Hubble is observing and measuring the auroras on Jupiter, Juno is measuring the properties of the solar wind itself; a perfect collaboration between a telescope and a space probe.\n\n“These auroras are very dramatic and among the most active I have ever seen”, said Jonathan Nichols from the University of Leicester, U.K., and principal investigator of the study. “It almost seems as if Jupiter is throwing a firework party for the imminent arrival of Juno.” \n\nCredits: NASA, ESA, and J. Nichols (University of Leicester)",
+      "text": "TzDQ, Tzedeq, Jupiter",
+      "nasaId": "hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o"
   },
   {
-    text: "MADIM, Madim, Mars",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width_feature/public/images/600154main_PIA14479_full.jpg",
+      "imgTitle": "Hubble Captures Best View of Mars Ever Obtained from Earth",
+      "height": 500,
+      "width": 500,
+      "description": "Hubble Captures Best View of Mars Ever Obtained from Earth",
+      "text": "MADIM, Madim, Mars",
+      "nasaId": "PIA03154"
   },
   {
-    text: "ShMSh, Shemesh, the Sun",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/halloween_sun_2014_2k.jpg",
+      "imgTitle": "Handle-shaped Prominence",
+      "height": 2034,
+      "width": 2100,
+      "description": "NASA Extreme Ultraviolet Imaging Telescope aboard ESA’s SOHO spacecraft took this image of a huge, handle-shaped prominence in 1999. Prominences are huge clouds of relatively cool dense plasma suspended in the Sun hot, thin corona.",
+      "text": "ShMSh, Shemesh, the Sun",
+      "nasaId": "PIA03149"
   },
   {
-    text: "NVGH, Nogah, Venus",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width_feature/public/images/724700main_venus_full_full.jpg",
+      "imgTitle": "Venus - Volcanic features in Atla Region",
+      "height": 4682,
+      "width": 4789,
+      "description": "This image from the Atla region of Venus obtained by NASA Magellan spacecraft shows several types of volcanic features and superimposed surface fractures.\n\nhttp://photojournal.jpl.nasa.gov/catalog/PIA00201",
+      "text": "NVGH, Nogah, Venus",
+      "nasaId": "PIA00201"
   },
   {
-    text: "KVKB, Kokav, Mercury",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/press_photo_4.jpg",
+      "imgTitle": "Mercury as Never Seen Before",
+      "height": 1024,
+      "width": 1024,
+      "description": "Mercury as Never Seen Before",
+      "text": "KVKB, Kokav, Mercury",
+      "nasaId": "PIA11245"
   },
   {
-    text: "LBNH, Levanah, the Moon",
-    image:
-      "https://nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/moon.4195_0.jpg",
-  },
+      "imgTitle": "Moon North Pole",
+      "height": 900,
+      "width": 900,
+      "description": "Moon North Pole",
+      "text": "LBNH, Levanah, the Moon",
+      "nasaId": "PIA02442"
+  }
 ];
 
 export let weekIndexes = [3, 6, 2, 5, 1, 4, 0];

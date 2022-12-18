@@ -1,7 +1,6 @@
 .link {
   background-color: black;
   padding: 8px;
-  cursor: pointer;
-  color: blue;
+  border-radius: 8px 8px 0 0 ;
   text-align: center;
 }

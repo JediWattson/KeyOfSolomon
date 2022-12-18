@@ -1,8 +1,7 @@
-import React from "react";
-
 import Head from "next/head";
-import { Container } from "react-bootstrap";
 import Header from "../header";
+
+import styles from "./styles.module.css";
 
 const Layout = ({ children }) => {
   return (
@@ -10,6 +9,7 @@ const Layout = ({ children }) => {
       <style jsx global>{`
         body {
           background: #136394;
+          margin: 0;
         }
         p {
           color: #fff;
@@ -24,7 +24,9 @@ const Layout = ({ children }) => {
         />
       </Head>
       <Header />
-      <Container>{children}</Container>
+      <div className={styles.rowContainer}>
+        {children}
+      </div>
     </>
   );
 };

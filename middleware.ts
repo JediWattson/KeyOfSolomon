@@ -6,12 +6,14 @@ import { v4 as uuidv4 } from 'uuid';
 const sessionKey = 'session-id';
 export function middleware(request: NextRequest) {
     if (request.cookies.has(sessionKey)) {
-        console.log(`User Visited: ${request.cookies.get(sessionKey)?.value} -- ${request.url}`);
+        console.log(`USER RETURN: ${request.cookies.get(sessionKey)?.value} -- ${request.url}`);
     } else {
+        const sessionValue = uuidv4()
+        console.log(`USER VISIT: ${sessionValue}`)
         const response = NextResponse.next()
         response.cookies.set({
             name: sessionKey,
-            value: uuidv4(),
+            value: sessionValue,
             path: '/',
             httpOnly: true
         }) 

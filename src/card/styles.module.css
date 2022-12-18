@@ -1,5 +1,4 @@
 .cardContainer {
-
     padding: 16px;
     margin: 16px;
     border-radius: 8px;
@@ -7,6 +6,10 @@
     color: white;
   }
   
+  .cardContainer > h1, .cardContainer > h4 { 
+    margin: 4px 0;
+  }
+
   .cardImg {
     width: 100%;
     height: 420px;

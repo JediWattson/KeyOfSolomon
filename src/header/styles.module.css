@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 32px;
-  margin-bottom: 16px;
-  background-color: #494e5c;
+  padding: 0 32px;
+  background-color: #445e7f;
   border-radius:  0 0 8px 8px;
 }
 
 .title {
+  margin: 4px 0;
   color: #ced2db;
   animation-iteration-count: infinite;
   animation-name: pulsate;

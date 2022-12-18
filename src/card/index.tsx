@@ -14,12 +14,12 @@ const shimmer = (w: number, h: number) => `
   <rect width="${w}" height="${h}" fill="#333" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-</svg>`
+</svg>`;
 
 const toBase64 = (str: string) =>
-  typeof window === 'undefined'
-    ? Buffer.from(str).toString('base64')
-    : window.btoa(str)
+  typeof window === "undefined"
+    ? Buffer.from(str).toString("base64")
+    : window.btoa(str);
 
 function Card({
   img,
@@ -43,7 +43,9 @@ function Card({
         src={img.src}
         alt={img.alt}
         placeholder="blur"
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(img.height, img.width))}`}
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(
+          shimmer(img.height, img.width)
+        )}`}
       />
       {footer && (
         <>

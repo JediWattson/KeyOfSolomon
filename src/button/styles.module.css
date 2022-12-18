@@ -1,11 +1,11 @@
 .container {
-    background: #0a1869;
-    opacity: .3;
-    color: white;
-    box-shadow: 2px 2px 8px #d7d7fd;
+  background: #0a1869;
+  opacity: 0.3;
+  color: white;
+  box-shadow: 2px 2px 8px #d7d7fd;
 }
 
 .disabled {
-    background: #ff2e2e;
-    box-shadow: 2px 2px 8px #313c06;;
+  background: #ff2e2e;
+  box-shadow: 2px 2px 8px #313c06;
 }

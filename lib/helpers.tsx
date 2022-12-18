@@ -81,13 +81,16 @@ export function usePlanets(): Info {
         1000 * 60 * 30
       );
       return () => clearInterval(infoInterval);
-    } 
+    }
     const localSunrise = localStorage.getItem("sunrise");
     if (localSunrise) {
       const formattedSunrise = new Date(localSunrise);
       setSunrise(formattedSunrise.getHours());
     } else {
-      navigator.geolocation.getCurrentPosition(pos => getSunrise(pos, setSunrise), console.error);
+      navigator.geolocation.getCurrentPosition(
+        (pos) => getSunrise(pos, setSunrise),
+        console.error
+      );
     }
   }, [sunrise]);
 

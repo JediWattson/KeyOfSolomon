@@ -5,10 +5,10 @@ import { Fragment } from "react";
 import styles from "./styles.module.css";
 
 const pathLinks = [
-  { path: "/", title: "Home" }, 
+  { path: "/", title: "Home" },
   { path: "/planetarium", title: "Planetarium" },
-  { path: "/about", title: "About" }
-]
+  { path: "/about", title: "About" },
+];
 
 function Header() {
   const router = useRouter();
@@ -20,9 +20,11 @@ function Header() {
       <div className={styles.link}>
         {links.map(({ path, title }, i) => (
           <Fragment key={i}>
-            <Link key={i} href={path}>{title}</Link>
+            <Link href={path}>
+              {title}
+            </Link>
             {i < links.length - 1 && <span className={styles.bar}>|</span>}
-          </Fragment> 
+          </Fragment>
         ))}
       </div>
     </div>

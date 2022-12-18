@@ -1,7 +1,9 @@
 module.exports = {
-    images: {
-        remotePatterns: [{
-            hostname: 'images-assets.nasa.gov' 
-        }]
-    }
-}
+  images: {
+    remotePatterns: [
+      {
+        hostname: "images-assets.nasa.gov",
+      },
+    ],
+  },
+};

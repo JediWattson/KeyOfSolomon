@@ -7,7 +7,7 @@ function Header() {
   const router = useRouter();
   return (
     <div className={styles.header}>
-      <h2 className={styles.title}>{'The Index of Solomon'}</h2>
+      <h2 className={styles.title}>{"The Index of Solomon"}</h2>
       <div className={styles.link}>
         {router.asPath === "/about" ? (
           <Link href="/">{"Home"}</Link>

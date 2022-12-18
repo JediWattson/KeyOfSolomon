@@ -36,13 +36,16 @@ export function formatInfo(sunrise: number): Info {
   if (!planets[day] || !planets[hour] || !themes[day]) {
     throw new Error(`FORMAT ERROR: incorrect day: ${day} or hour: ${hour}`);
   }
-  
-  const planetDay = { ...planets[day], subtitle: themes[day]}
 
-  const groupedInfo = grouping.reduce((acc: Array<string>, cur: groupingType) => {
-    if (cur.planets.includes(hour)) acc.push(cur.text);
-    return acc;
-  }, []);
+  const planetDay = { ...planets[day], subtitle: themes[day] };
+
+  const groupedInfo = grouping.reduce(
+    (acc: Array<string>, cur: groupingType) => {
+      if (cur.planets.includes(hour)) acc.push(cur.text);
+      return acc;
+    },
+    []
+  );
   const planetHour = { ...planets[hour], subtitle: groupedInfo };
 
   return {

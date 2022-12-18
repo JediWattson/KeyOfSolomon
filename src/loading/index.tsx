@@ -1,9 +1,8 @@
-
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 function Loading() {
-  const { chip, chip1, chip0 } = styles
-   return (
+  const { chip, chip1, chip0 } = styles;
+  return (
     <div className={styles.loadingContainer}>
       <div className={styles.chipContainer}>
         <div className={`${chip} ${chip0}`} />

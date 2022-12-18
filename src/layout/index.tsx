@@ -24,9 +24,7 @@ const Layout = ({ children }) => {
         />
       </Head>
       <Header />
-      <div className={styles.rowContainer}>
-        {children}
-      </div>
+      <div className={styles.rowContainer}>{children}</div>
     </>
   );
 };

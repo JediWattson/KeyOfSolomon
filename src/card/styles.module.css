@@ -1,9 +1,10 @@
 .cardContainer {
   padding: 16px;
-  margin: 16px;
+  margin: 32px;
   border-radius: 8px;
   background: gray;
   color: white;
+  box-shadow: 8px 8px 16px #202e7e;
 }
 
 .cardContainer > h1,

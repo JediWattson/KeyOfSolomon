@@ -1,9 +1,9 @@
 import Card from "../card";
 import Loading from "../loading";
 
-import { usePlanets, makeAlt } from "./helpers";
+import { usePlanets, makeAlt } from "../../lib/helpers";
 
-function PlanetCurrent() {
+function Info() {
   const { fetching, day, hour } = usePlanets();
   if (fetching) return <Loading />;
 
@@ -39,4 +39,4 @@ function PlanetCurrent() {
   );
 }
 
-export default PlanetCurrent;
+export default Info;

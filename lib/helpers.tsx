@@ -8,8 +8,6 @@ import {
   planets,
 } from "./constants";
 
-export const makeAlt = (text) => text && `Planet ${text.split(",")[2].trim()}`;
-
 interface planet {
   subtitle: string | string[];
   nasaId: string;
@@ -24,7 +22,7 @@ export interface Info {
   fetching: boolean;
 }
 
-export function formatInfo(sunrise: number): Info {
+function formatInfo(sunrise: number): Info {
   const date: Date = new Date();
   const currHours: number = date.getHours();
 
@@ -55,24 +53,24 @@ export function formatInfo(sunrise: number): Info {
   };
 }
 
+const getSunrise = async (pos: GeolocationPosition, cb: (number) => void) => {
+  try {
+    const resp = await fetch(
+      `https://api.sunrise-sunset.org/json?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&date=today&formatted=0`
+    );
+    const json = await resp.json();
+
+    localStorage.setItem("sunrise", json.results.sunrise);
+    const sunrise = new Date(json.results.sunrise);
+    cb(sunrise.getHours());
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export function usePlanets(): Info {
   const [info, setInfo] = useState<Info>({ fetching: true });
   const [sunrise, setSunrise] = useState<number>();
-
-  const getSunrise = async (pos: GeolocationPosition) => {
-    try {
-      const resp = await fetch(
-        `https://api.sunrise-sunset.org/json?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&date=today&formatted=0`
-      );
-      const json = await resp.json();
-
-      localStorage.setItem("sunrise", json.results.sunrise);
-      const sunrise = new Date(json.results.sunrise);
-      setSunrise(sunrise.getHours());
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   useEffect(() => {
     if (sunrise) {
@@ -83,16 +81,17 @@ export function usePlanets(): Info {
         1000 * 60 * 30
       );
       return () => clearInterval(infoInterval);
+    } 
+    const localSunrise = localStorage.getItem("sunrise");
+    if (localSunrise) {
+      const formattedSunrise = new Date(localSunrise);
+      setSunrise(formattedSunrise.getHours());
     } else {
-      const localSunrise = localStorage.getItem("sunrise");
-      if (localSunrise) {
-        const formattedSunrise = new Date(localSunrise);
-        setSunrise(formattedSunrise.getHours());
-      } else {
-        navigator.geolocation.getCurrentPosition(getSunrise, console.error);
-      }
+      navigator.geolocation.getCurrentPosition(pos => getSunrise(pos, setSunrise), console.error);
     }
   }, [sunrise]);
 
   return info;
 }
+
+export const makeAlt = (text) => text && `Planet ${text.split(",")[2].trim()}`;

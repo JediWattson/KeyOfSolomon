@@ -6,15 +6,6 @@ import styles from "./styles.module.css";
 const Layout = ({ children }) => {
   return (
     <>
-      <style jsx global>{`
-        body {
-          background: #136394;
-          margin: 0;
-        }
-        p {
-          color: #fff;
-        }
-      `}</style>
       <Head>
         <title>{`Solomon's Index`}</title>
         <meta name="theme-color" content="#136394" />

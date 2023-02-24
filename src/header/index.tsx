@@ -20,9 +20,7 @@ function Header() {
       <div className={styles.link}>
         {links.map(({ path, title }, i) => (
           <Fragment key={i}>
-            <Link href={path}>
-              {title}
-            </Link>
+            <Link href={path}>{title}</Link>
             {i < links.length - 1 && <span className={styles.bar}>|</span>}
           </Fragment>
         ))}

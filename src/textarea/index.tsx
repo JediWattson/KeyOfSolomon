@@ -5,9 +5,7 @@ import styles from "./style.module.css";
 const Textarea = ({ textValueRef, className = "" }) => {
   return (
     <textarea
-      onChange={(e) => {
-        textValueRef.current = e.currentTarget.value;
-      }}
+      ref={textValueRef}
       className={`${className} ${styles.textareaContainer}`}
     />
   );

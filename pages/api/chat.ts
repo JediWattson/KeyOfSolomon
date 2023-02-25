@@ -14,18 +14,17 @@ export default async function handler(req, res) {
     const publicKey = await jose.importSPKI(process.env.RSAPUB, alg)
     await jose.jwtVerify(req.cookies.oracle, publicKey)
 
-
-    const { text } = JSON.parse(req.body);
+    const { text = [] } = JSON.parse(req.body);
+    text.unshift("The Oracle is a bot that creates a murder mystery in ancient greece and talks in dialogue like a text adventure.")
+    text.push('Oracle:')
     const response = await openai.createCompletion(
       {
         model: "text-davinci-003",
-        prompt: `
-        Oracle is a storyteller who narrates a text adventure about acient greek and mount olympus:
-        ${text}
-      `,
+        prompt: text.join('\n'),
         stream: true,
         temperature: 0.5,
         max_tokens: 230,
+        stop: ["\n"],
         top_p: 0.3,
         frequency_penalty: 0.5,
         presence_penalty: 0.0,

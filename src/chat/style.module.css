@@ -11,7 +11,7 @@
 
 .textBox {
     text-align: center;
-    margin: auto;
+    margin: auto 24px;
     color: #cec6c6;
     font-size: 22px;
 }

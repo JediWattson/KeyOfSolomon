@@ -11,7 +11,9 @@ function Button({ large, text, onClick, disabled }: ButtonPropsType) {
   return (
     <button
       disabled={disabled}
-      className={`${styles.buttonContainer} ${disabled ? styles.disabled : ""} ${large ? styles.large : ""}`}
+      className={`${styles.buttonContainer} ${
+        disabled ? styles.disabled : ""
+      } ${large ? styles.large : ""}`}
       onClick={onClick}
     >
       {text}

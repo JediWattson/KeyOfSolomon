@@ -1,17 +1,26 @@
+const jose = require('jose');
 const { Configuration, OpenAIApi } = require("openai");
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
+const alg = 'RS256';
+
 export default async function handler(req, res) {
   try {
+    if (!req.cookies.oracle) res.status(403).send();
+    const publicKey = await jose.importSPKI(process.env.RSAPUB, alg)
+    await jose.jwtVerify(req.cookies.oracle, publicKey)
+
+
     const { text } = JSON.parse(req.body);
     const response = await openai.createCompletion(
       {
         model: "text-davinci-003",
         prompt: `
-        Oracle can fortell fictional futures and describes visions vividly with great detail:
+        Oracle is a storyteller who narrates a text adventure about acient greek and mount olympus:
         ${text}
       `,
         stream: true,
@@ -41,6 +50,6 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     console.error(error);
-    res.status(500);
+    res.status(500).send();
   }
 }

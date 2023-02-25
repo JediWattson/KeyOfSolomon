@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 
 const sessionKey = "session-id";
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   if (request.cookies.has(sessionKey)) {
     console.log(
       `USER RETURN: ${request.cookies.get(sessionKey)?.value} -- ${request.url}`

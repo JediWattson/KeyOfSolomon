@@ -1,12 +1,15 @@
-.container {
+.buttonContainer {
+  box-shadow: 2px 2px 8px #d7d7fd;
   background: #0a1869;
-  opacity: 0.3;
+  opacity: 0.7;
   color: white;
-  height: 420px;
   border-radius: 8px;
   padding: 24px;
   font-size: 22px;
-  box-shadow: 2px 2px 8px #d7d7fd;
+}
+
+.large {
+  height: 420px;
 }
 
 .disabled {

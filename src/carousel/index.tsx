@@ -15,6 +15,7 @@ function Carousel() {
   return (
     <div className={styles.container}>
       <Button
+        large
         disabled={planetIndex === 0}
         text="<<"
         onClick={() => planetIndex > 0 && setPlanetIndex((prev) => prev - 1)}
@@ -29,6 +30,7 @@ function Carousel() {
         }}
       />
       <Button
+        large
         disabled={planetIndex === planets.length - 1}
         text=">>"
         onClick={() =>

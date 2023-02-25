@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 const pathLinks = [
   { path: "/", title: "Home" },
   { path: "/planetarium", title: "Planetarium" },
+  { path: "/oracle", title: "The Oracle" },
   { path: "/about", title: "About" },
 ];
 

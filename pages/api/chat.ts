@@ -1,4 +1,4 @@
-const jose = require('jose');
+const jose = require("jose");
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
@@ -6,21 +6,23 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const alg = 'RS256';
+const alg = "RS256";
 
 export default async function handler(req, res) {
   try {
     if (!req.cookies.oracle) res.status(403).send();
-    const publicKey = await jose.importSPKI(process.env.RSAPUB, alg)
-    await jose.jwtVerify(req.cookies.oracle, publicKey)
+    const publicKey = await jose.importSPKI(process.env.RSAPUB, alg);
+    await jose.jwtVerify(req.cookies.oracle, publicKey);
 
     const { text = [] } = JSON.parse(req.body);
-    text.unshift("The Oracle is a bot that creates a murder mystery in ancient greece and talks in dialogue like a text adventure.")
-    text.push('Oracle:')
+    text.unshift(
+      "The Oracle is a bot that creates a murder mystery in ancient greece and talks in dialogue like a text adventure."
+    );
+    text.push("Oracle:");
     const response = await openai.createCompletion(
       {
         model: "text-davinci-003",
-        prompt: text.join('\n'),
+        prompt: text.join("\n"),
         stream: true,
         temperature: 0.5,
         max_tokens: 230,

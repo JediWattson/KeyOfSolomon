@@ -10,5 +10,6 @@ export default async function handler(req, res) {
     .sign(privateKey);
 
   console.log(jwt);
+  // res.setHeader('Set-Cookie', { oracle: jwt });
   res.status(403).json({ unathorized: true });
 }

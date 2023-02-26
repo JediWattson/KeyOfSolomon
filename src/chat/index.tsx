@@ -10,12 +10,24 @@ const postOracle = async (text?: string[]) => {
     body: JSON.stringify({ text }),
   });
   const data = await res.json();
+
+  if (data.text === "") {
+    data.text = "Try again!";
+  }
+
+  speechSynthesis.speak(new SpeechSynthesisUtterance(data.text));
   return data.text;
 };
 
 const Chat = () => {
   const [oracleSays, setOracle] = useState<string[]>([]);
   const textValueRef = useRef(null);
+  const chatWindowRef = useRef(null);
+
+  const handleRef = (ref) => {
+    if (!ref) return;
+    ref.scrollTop = ref.scrollHeight;
+  };
 
   useEffect(() => {
     const init = async () => {
@@ -24,17 +36,18 @@ const Chat = () => {
     };
     init();
   }, []);
+
   const handleClick = async () => {
     const { value } = textValueRef.current;
     textValueRef.current.value = "";
-    const chatArr = [...oracleSays, `Adventurer: ${value}`];
+    const chatArr = [...oracleSays, `Detective: ${value}`];
     setOracle(chatArr);
     const text = await postOracle(chatArr);
     setOracle([...chatArr, text]);
   };
   return (
     <>
-      <div className={styles.textBox}>
+      <div ref={handleRef} className={styles.textBox}>
         {oracleSays.map((o, i) => (
           <p key={i}>
             {o}

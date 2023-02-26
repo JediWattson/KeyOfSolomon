@@ -7,6 +7,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const alg = "RS256";
+const backstory = `The Oracle is a narrator describing the adventure, while the detective askes questions and describes actions to carry along the story. This will be a text adventure murder mystery set in ancient Greece. The Oracle will give three days starting at the arrival to the murder scene for the detective to solve the murder or else something terrible will happen only the Oracle knows and explains after the said three days have finished. Every statement the detective makes be it action or question will cost time and the oracle will remind the detective how much time is left every response she gives. The Oracle starts by setting up the mystery.`;
+const narrator = "Oracle:";
 
 export default async function handler(req, res) {
   try {
@@ -15,26 +17,22 @@ export default async function handler(req, res) {
     await jose.jwtVerify(req.cookies.oracle, publicKey);
 
     const { text = [] } = JSON.parse(req.body);
-    text.unshift(
-      "The Oracle is a bot that creates a murder mystery in ancient greece and talks in dialogue like a text adventure."
-    );
-    text.push("Oracle:");
+    text.unshift(backstory);
+    text.push(narrator);
     const response = await openai.createCompletion(
       {
         model: "text-davinci-003",
         prompt: text.join("\n"),
         stream: true,
-        temperature: 0.5,
         max_tokens: 230,
         stop: ["\n"],
-        top_p: 0.3,
-        frequency_penalty: 0.5,
-        presence_penalty: 0.0,
+        temperature: 0.8,
+        frequency_penalty: 0.7,
       },
       { responseType: "stream" }
     );
 
-    let oracleRes = "";
+    let oracleRes = narrator;
     response.data.on("data", (data) => {
       const lines = data
         .toString()

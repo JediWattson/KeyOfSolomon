@@ -1,10 +1,10 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 32px;
   background-color: #445e7f;
   border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
@@ -16,14 +16,26 @@
   animation-duration: 3s;
 }
 
-.link > a {
+.linkGroup {
+  margin: 4px 0;
+}
+
+.linkGroup > a {
   font-size: 20px;
   text-decoration: none;
 }
 
-.bar {
-  margin: 0 4px;
-  color: blue;
+.divider {
+  padding: 8px;
+  color: rgb(59, 217, 96);
+}
+
+.button, .button:visited, .button:active {
+  color: rgb(251, 3, 3);
+  background: rgb(12, 221, 221);
+  padding: 0 8px;
+  border-radius: 8px;
+  box-shadow: rgb(59, 217, 96) 0px 0px 8px;
 }
 
 @keyframes pulsate {

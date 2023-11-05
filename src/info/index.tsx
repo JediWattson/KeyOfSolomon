@@ -3,12 +3,14 @@ import Loading from "../loading";
 
 import { usePlanets, makeAlt } from "../../lib/helpers";
 
+import styles from "./styles.module.css";
+
 function Info() {
   const { fetching, day, hour } = usePlanets();
   if (fetching) return <Loading />;
 
   return (
-    <>
+    <div className={styles.container} >
       <Card
         title="Today's planet"
         img={{
@@ -35,7 +37,7 @@ function Info() {
           subtitle: hour.subtitle,
         }}
       />
-    </>
+    </div>
   );
 }
 

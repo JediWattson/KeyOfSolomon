@@ -9,6 +9,7 @@ const pathLinks = [
   { path: "/planetarium", title: "Planetarium" },
   // { path: "/oracle", title: "The Oracle" },
   { path: "/about", title: "About" },
+  { path: "/webgpu", title: "WebGPU" }
 ];
 
 function Header() {

@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Famtree's Solomon's Key" />
-        <meta name="twitter:image" content="/case_mtn.jpg" />        
+        <meta name="twitter:image" content="https://famtrees.net/case_mtn.jpg" />        
         <meta name="twitter:creator" content="@Stoicfitness22" />
         <meta 
           name="twitter:description" 
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         />
 
         <meta property="og:title" content="Famtree's Solomon's Key" />
-        <meta property="og:image" content="/case_mtn.jpg" />
+        <meta property="og:image" content="https://famtrees.net/case_mtn.jpg" />
         <meta
           property="og:description"
           content="Determine the best way to conduct oneself by time and day referenced from The Lesser Key of Solomon. Using an offset from your location's time of dawn an ideal planet for that hour explains the energy wrought and how it can be best utilized. Also enjoy a curated experience of pictures from NASA to showcase the planets."

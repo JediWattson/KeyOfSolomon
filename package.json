@@ -14,7 +14,7 @@
     "react-dom": "^18.2.0",
     "sharp": "^0.31.2",
     "uuid": "^9.0.0",
-    "webgpu-fun": "^0.2.19"
+    "webgpu-fun": "^0.2.20"
   },
   "devDependencies": {
     "@types/node": "18.7.23",

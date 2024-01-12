@@ -1,5 +1,7 @@
+'use client'
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
 import styles from "./styles.module.css";
@@ -13,9 +15,8 @@ const pathLinks = [
 ];
 
 function Header() {
-  const router = useRouter();
-
-  const links = pathLinks.filter(({ path }) => router.asPath !== path);
+  const path = usePathname();
+  const links = pathLinks.filter(({ path: titlePath }) => path !== titlePath);
   return (
     <div className={styles.header}>
       <h2 className={styles.title}>{"The Index of Solomon"}</h2>

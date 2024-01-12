@@ -1,13 +1,14 @@
-import Card from "../card";
-import Loading from "../loading";
-
-import { usePlanets, makeAlt } from "../../lib/helpers";
+'use client'
 
 import styles from "./styles.module.css";
 
+import Card from "../card";
+import Loading from "../loading";
+import { usePlanets, makeAlt } from "../lib/helpers";
+
 function Info() {
   const { fetching, day, hour } = usePlanets();
-  if (fetching) return <Loading />;
+  if (fetching || !day || !hour) return <Loading />;
 
   return (
     <div className={styles.container} >

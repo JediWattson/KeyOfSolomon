@@ -21,7 +21,7 @@ const postOracle = async (text?: string[]) => {
 
 const Chat = () => {
   const [oracleSays, setOracle] = useState<string[]>([]);
-  const textValueRef = useRef(null);
+  const textValueRef = useRef({ value: "" });
   const chatWindowRef = useRef(null);
 
   const handleRef = (ref) => {

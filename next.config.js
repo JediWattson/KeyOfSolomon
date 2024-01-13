@@ -11,6 +11,9 @@ module.exports = {
       {
         hostname: "images-assets.nasa.gov",
       },
+      {
+        hostname: "github.githubassets.com",
+      }
     ],
   },
 };

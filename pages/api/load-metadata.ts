@@ -1,5 +1,5 @@
 import { writeFile, existsSync } from "fs";
-import { planets } from "../../lib/constants";
+import { planets } from "../../src/lib/constants";
 
 export default async function handler(req, res) {
   return res.status(403).send();
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       ["File:ImageWidth"]: width,
       ["AVAIL:Description"]: description,
     } = metaData;
-    return { imgTitle, height, width, description, ...planet };
+    return { ...planet, imgTitle, height, width, description };
   });
   const resPlanets = await Promise.all(promisePlanets);
   writeFile(planetFile, JSON.stringify(resPlanets), () => console.log("DONE"));

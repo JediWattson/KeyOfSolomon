@@ -1,6 +1,8 @@
+'use client'
+
 import { useRef } from "react";
 import { useRender } from "webgpu-fun";
-import example from "../../lib/example";
+import example from "../lib/game/example";
 
 import styles from "./styles.module.css";
 

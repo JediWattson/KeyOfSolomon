@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 
 import {
@@ -6,7 +8,7 @@ import {
   groupingType,
   themes,
   planets,
-} from "./constants";
+} from "../constants";
 
 interface planet {
   subtitle: string | string[];

@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useEffect, useRef, useState } from "react";
-import Button from "../button";
-import Textarea from "../textarea";
+import Button from "../veiw/button";
+import Textarea from "../veiw/textarea";
 
 import styles from "./style.module.css";
 

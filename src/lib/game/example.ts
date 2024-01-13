@@ -42,19 +42,19 @@ const meshVertexLayout = [{
 }]
 
 const makeExample = () => [
-    { 
-        bufferSize: 64 * 1,
-        renderPipelineOpts: {
-            shader: textureShader,
-            vertexBufferLayout: meshVertexLayout
-        },
-        bufferCb: (device: GPUDevice, buffer: GPUBuffer) => {
-            const boxMesh = makeBox(device, buffer);
-            boxMesh.makeObjects([vec3.create(2, 2, -1)]);
-            updateFloor(boxMesh);            
-            return boxMesh      
-        } 
-    },
+    // { 
+    //     bufferSize: 64 * 1,
+    //     renderPipelineOpts: {
+    //         shader: textureShader,
+    //         vertexBufferLayout: meshVertexLayout
+    //     },
+    //     bufferCb: (device: GPUDevice, buffer: GPUBuffer) => {
+    //         const boxMesh = makeBox(device, buffer);
+    //         boxMesh.makeObjects([vec3.create(2, 2, -1)]);
+    //         updateFloor(boxMesh);            
+    //         return boxMesh      
+    //     } 
+    // },
     { 
         bufferSize: 64 * (1 + (floorCount*2))**2,
         texturePipelineOpts: {

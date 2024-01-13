@@ -2,9 +2,9 @@
 
 import styles from "./styles.module.css";
 
-import Card from "../card";
-import Loading from "../loading";
-import { usePlanets, makeAlt } from "../lib/helpers";
+import Card from "../veiw/card";
+import Loading from "../veiw/loading";
+import { usePlanets, makeAlt } from "../lib/game/helpers";
 
 function Info() {
   const { fetching, day, hour } = usePlanets();

@@ -3,8 +3,8 @@ import { useState } from "react";
 import Card from "../card";
 import Button from "../button";
 
-import { planets } from "../lib/constants";
-import { makeAlt } from "../lib/helpers";
+import { planets } from "../../lib/constants";
+import { makeAlt } from "../../lib/game/helpers";
 
 import styles from "./styles.module.css";
 

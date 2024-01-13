@@ -1,19 +1,25 @@
-import { mat4 } from "wgpu-matrix";
+import { cookies } from "next/headers";
+import { v4 as uuidv4 } from "uuid";
 
-export function updateFloor(floorTexture) {
-    floorTexture.update(pos => mat4.translation(pos))
-}
+let instCount = 0
+const sessionKey = "session-id";
+export const handleSession = async (path: string) => {
+  'use server'
 
-let t = 0.0
-export function updateTriangles(triangleMesh) {
-    t += 0.01
-    if (t > 2.0 * Math.PI) {
-        t -= 2.0 * Math.PI;
-    }
-
-    triangleMesh.update(pos => {
-        const model = mat4.create();
-        mat4.translation(pos, model);        
-        return mat4.rotateZ(model, t);
+  const cookieStore = cookies()
+  if (cookieStore.has(sessionKey)) {
+    console.log(
+      `USER RETURN: ${cookieStore.get(sessionKey)?.value} -- ${path}`
+    );
+  } else {
+    instCount++
+    const sessionValue = uuidv4();
+    console.log(`USER VISIT: -- ${sessionValue} -- count: ${instCount} -- ${path}`);
+    cookieStore.set({
+      name: sessionKey,
+      value: sessionValue,
+      path: "/",
+      httpOnly: true,
     });
+  }
 }

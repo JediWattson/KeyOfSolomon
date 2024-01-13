@@ -1,6 +1,6 @@
 import './styles.css';
 
-import LayoutComponent from '../src/layout';
+import LayoutComponent from '../src/veiw/layout';
 
 export default function Layout({ children }) {
     return (

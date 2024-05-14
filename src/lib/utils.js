@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 let instCount = 0
 const sessionKey = "session-id";
-export const handleSession = async (path: string) => {
+export const handleSession = async (path) => {
   'use server'
 
   const cookieStore = cookies()

@@ -8,28 +8,14 @@ import {
   groupingType,
   themes,
   planets,
-} from "../constants";
+} from "../constants.js";
 
-interface planet {
-  subtitle: string | string[];
-  nasaId: string;
-  text: string;
-  height: number;
-  width: number;
-}
+function formatInfo(sunrise) {
+  const date = new Date();
+  const currHours = date.getHours();
 
-export interface Info {
-  day?: planet;
-  hour?: planet;
-  fetching: boolean;
-}
-
-function formatInfo(sunrise: number): Info {
-  const date: Date = new Date();
-  const currHours: number = date.getHours();
-
-  const day: number = weekIndexes[date.getDay()];
-  const hour: number =
+  const day = weekIndexes[date.getDay()];
+  const hour =
     (day + (currHours > sunrise ? currHours - sunrise : currHours)) %
     planets.length;
 
@@ -40,7 +26,7 @@ function formatInfo(sunrise: number): Info {
   const planetDay = { ...planets[day], subtitle: themes[day] };
 
   const groupedInfo = grouping.reduce(
-    (acc: Array<string>, cur: groupingType) => {
+    (acc, cur) => {
       if (cur.planets.includes(hour)) acc.push(cur.text);
       return acc;
     },
@@ -55,7 +41,7 @@ function formatInfo(sunrise: number): Info {
   };
 }
 
-const getSunrise = async (pos: GeolocationPosition, cb: (number) => void) => {
+const getSunrise = async (pos, cb) => {
   try {
     const resp = await fetch(
       `https://api.sunrise-sunset.org/json?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&date=today&formatted=0`
@@ -70,9 +56,9 @@ const getSunrise = async (pos: GeolocationPosition, cb: (number) => void) => {
   }
 };
 
-export function usePlanets(): Info {
-  const [info, setInfo] = useState<Info>({ fetching: true });
-  const [sunrise, setSunrise] = useState<number>();
+export function usePlanets() {
+  const [info, setInfo] = useState({ fetching: true });
+  const [sunrise, setSunrise] = useState();
 
   useEffect(() => {
     if (sunrise) {

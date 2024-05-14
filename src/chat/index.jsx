@@ -6,7 +6,7 @@ import Textarea from "../veiw/textarea";
 
 import styles from "./style.module.css";
 
-const postOracle = async (text?: string[]) => {
+const postOracle = async (text) => {
   const res = await fetch("/api/chat", {
     method: "POST",
     body: JSON.stringify({ text }),
@@ -22,7 +22,7 @@ const postOracle = async (text?: string[]) => {
 };
 
 const Chat = () => {
-  const [oracleSays, setOracle] = useState<string[]>([]);
+  const [oracleSays, setOracle] = useState([]);
   const textValueRef = useRef({ value: "" });
   const chatWindowRef = useRef(null);
 

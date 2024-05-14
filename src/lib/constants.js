@@ -73,12 +73,7 @@ export let themes = [
   "The Days and Hours of the Moon are good for embassies; voyages envoys; messages; navigation; reconciliation; love; and the acquisition of merchandise by water. ",
 ];
 
-export interface groupingType {
-  planets: Array<number>;
-  text: string;
-}
-
-export let grouping: Array<groupingType> = [
+export let grouping = [
   {
     planets: [0, 2],
     text: "The Hours of Saturn, of Mars, and of the Moon are alike good for communicating and speaking with Spirits; as those of Mercury are for recovering thefts by the means of Spirits.",

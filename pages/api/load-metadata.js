@@ -1,5 +1,5 @@
 import { writeFile, existsSync } from "fs";
-import { planets } from "../../src/lib/constants";
+import { planets } from "../../src/lib/constants.js";
 
 export default async function handler(req, res) {
   return res.status(403).send();

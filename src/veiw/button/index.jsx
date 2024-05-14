@@ -1,13 +1,6 @@
 import styles from "./styles.module.css";
 
-type ButtonPropsType = {
-  text: string;
-  onClick: (any) => void;
-  disabled?: boolean;
-  large?: boolean;
-};
-
-function Button({ large, text, onClick, disabled }: ButtonPropsType) {
+function Button({ large, text, onClick, disabled }) {
   return (
     <button
       disabled={disabled}

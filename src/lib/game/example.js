@@ -64,7 +64,7 @@ const makeExample = () => [
             shader: textureShader,
             vertexBufferLayout: textureVertexLayout
         },
-        bufferCb: (device: GPUDevice, buffer: GPUBuffer) => {
+        bufferCb: (device, buffer) => {
             const floorMesh = makeQuad(device, buffer);
             const objects = Array(floorCount**2).fill(0).map(
                 (_, i) => vec3.create(i%floorCount, Math.floor(i/floorCount), -1)
@@ -80,7 +80,7 @@ const makeExample = () => [
             shader: meshShader,
             vertexBufferLayout: meshVertexLayout
         }, 
-        bufferCb: (device: GPUDevice, buffer: GPUBuffer) => {
+        bufferCb: (device, buffer) => {
             const triangleMesh = makeTriangle(device, buffer);
             const objects = Array(triangleCount).fill(0).map((_, i) =>  vec3.create(2, i, -0.5));
             triangleMesh.makeObjects(objects);

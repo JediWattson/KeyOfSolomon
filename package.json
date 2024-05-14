@@ -6,6 +6,10 @@
     "lint": "next lint && npx prettier --write ."
   },
   "dependencies": {
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.6",
+    "@react-three/postprocessing": "^2.16.2",
+    "@types/three": "^0.164.0",
     "dotenv": "^16.0.3",
     "jose": "^4.12.0",
     "next": "^14.0.4",
@@ -13,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.31.2",
+    "three": "^0.164.1",
     "uuid": "^9.0.0",
     "webgpu-fun": "^0.2.20"
   },

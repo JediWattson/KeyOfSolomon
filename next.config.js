@@ -1,4 +1,5 @@
 module.exports = {
+  transpilePackages: ['three'],
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(wgsl|glsl|vs|fs)$/,

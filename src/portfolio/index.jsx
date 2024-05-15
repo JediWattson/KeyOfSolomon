@@ -23,7 +23,7 @@ function Portfolio() {
 
     return (
         <>            
-            <div style={{ zIndex: 1000, top: 32, position: 'absolute', display: 'flex', gap: 10, margin: 22 }}>
+            <div style={{ zIndex: 1000, bottom: 32, position: 'absolute', display: 'flex', gap: 10, margin: 22 }}>
                 <button onClick={() => setObject(ObjectEnum.JETPACK)}>
                     JetPack
                 </button>

@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-
-const Portfolio = dynamic(() => import('../../src/portfolio'), { ssr: false })
+import Portfolio from "../../src/portfolio";
 
 function PortfolioPage() {
     return (

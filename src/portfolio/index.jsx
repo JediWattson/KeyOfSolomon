@@ -34,14 +34,12 @@ function Portfolio() {
             <Canvas style={{ height: 'calc(100vh - 36px)' }}>
                 <EffectComposer>
                     <Bloom 
-                        luminanceThreshold={0.1} // Higher threshold
+                        luminanceThreshold={3} // Higher threshold
                         luminanceSmoothing={2} // Lower smoothing for less intense bloom
-                        intensity={0.3} // Lower intensity
-                        radius={100} // Larger radius for more diffusion
-                        levels={8} // More levels for softer bloom
                     />
                 </EffectComposer>
-                <directionalLight position={[10, 2, 2]} intensity={10} />
+                <directionalLight position={[-8, 8, 18]} intensity={2} />
+                <directionalLight position={[-10, 0, -8]} intensity={2} />
                 <group dispose={null}>
                     <Model url={`scenes/${object}.glb`} />
                 </group>

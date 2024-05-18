@@ -13,7 +13,6 @@ const Model = ({ url }) => {
 
 function Portfolio({ assetManifest }) {
     const [objectUrl, setObjectUrl] = useState(assetManifest[0].url)
-    console.log(assetManifest)
 
     return (
         <>            

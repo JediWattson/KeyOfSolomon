@@ -2,13 +2,14 @@ import Head from "next/head";
 import Portfolio from "../../src/portfolio";
 
 const handleInit = async (setManifest) => {
-    const res = await fetch(`${process.env.R2_BUCKET_URL}/manifest.json`)
+    const res = await fetch(`${process.env.R2_BUCKET_URL}/manifest.json`, { next: { revalidate: 3000 }})
     const assetManifest = await res.json()
     return assetManifest.map(asset => ({ ...asset, url: `${process.env.R2_BUCKET_URL}/${asset.object}`  }))
 } 
 
 async function PortfolioPage() {    
     const assetManifest = await handleInit()
+
     return (
         <>
             <Head>

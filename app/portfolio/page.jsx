@@ -1,8 +1,14 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Portfolio from "../../src/portfolio";
 
-function PortfolioPage() {
+const handleInit = async (setManifest) => {
+    const res = await fetch(`${process.env.R2_BUCKET_URL}/manifest.json`)
+    const assetManifest = await res.json()
+    return assetManifest.map(asset => ({ ...asset, url: `${process.env.R2_BUCKET_URL}/${asset.object}`  }))
+} 
+
+async function PortfolioPage() {    
+    const assetManifest = await handleInit()
     return (
         <>
             <Head>
@@ -13,7 +19,7 @@ function PortfolioPage() {
                     content="Here is a work in progress for my collection of assets"
                 />
             </Head>
-            <Portfolio />
+            <Portfolio assetManifest={assetManifest} />
         </>
     )
 }

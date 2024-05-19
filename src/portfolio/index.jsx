@@ -5,6 +5,7 @@ import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import styles from './styles.module.css'
 
 const Model = ({ url }) => {
     const gltf = useLoader(GLTFLoader, url);
@@ -16,7 +17,7 @@ function Portfolio({ assetManifest }) {
 
     return (
         <>            
-            <div style={{ zIndex: 1000, bottom: 32, position: 'absolute', display: 'flex', gap: 10, margin: 22 }}>
+            <div className={styles.buttonGroup}>
                 {assetManifest.map((asset,index) => 
                     <button key={index} onClick={() => setObjectUrl(asset.url)}>
                         {asset.name}

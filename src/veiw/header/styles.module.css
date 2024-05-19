@@ -1,5 +1,5 @@
 .header {
-  padding: 0 32px;
+  padding: 4px 32px;
   background-color: #445e7f;
   border-radius: 0 0 8px 8px;
   display: flex;
@@ -7,17 +7,13 @@
   align-items: center;
 }
 
-.title {
-  margin: 4px 0;
+.title {  
+  margin: 0;
   color: #ced2db;
   animation-iteration-count: infinite;
   animation-name: pulsate;
   animation-direction: alternate;
   animation-duration: 3s;
-}
-
-.linkGroup {
-  margin: 4px 0;
 }
 
 .linkGroup > a {
@@ -44,5 +40,18 @@
   }
   to {
     text-shadow: #e6de00 1px 0 7px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    padding: 2px 8px;
+  }
+
+  .button {
+    padding: 0 4px;
+  }
+  .divider {
+    padding: 4px;
   }
 }

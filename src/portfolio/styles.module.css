@@ -1,0 +1,8 @@
+.buttonGroup {
+    z-index: 1000;
+    bottom: 16px;
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    margin: 16px;
+}

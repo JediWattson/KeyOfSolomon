@@ -1,27 +1,24 @@
-import Head from "next/head";
 import Portfolio from "../../src/portfolio";
 
 const handleInit = async (setManifest) => {
+    'use server'
+
     const res = await fetch(`${process.env.R2_BUCKET_URL}/manifest.json`, { next: { revalidate: 3000 }})
     const assetManifest = await res.json()
     return assetManifest.map(asset => ({ ...asset, url: `${process.env.R2_BUCKET_URL}/${asset.object}`  }))
 } 
 
+export const metadata = {
+    openGraph: {
+        title: "Famtrees - Portfolio",
+        description: `Here's a showcase of some 3d assets I've been working on`
+    }
+}
+
 async function PortfolioPage() {    
     const assetManifest = await handleInit()
-
     return (
-        <>
-            <Head>
-                <title>Portfolio</title>
-                <meta property="og:title" content="A portfolio of work" />
-                <meta
-                    property="og:description"
-                    content="Here is a work in progress for my collection of assets"
-                />
-            </Head>
-            <Portfolio assetManifest={assetManifest} />
-        </>
+        <Portfolio assetManifest={assetManifest} />
     )
 }
 

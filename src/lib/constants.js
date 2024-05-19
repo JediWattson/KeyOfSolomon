@@ -1,4 +1,4 @@
-export let planets = [
+export const planets = [
   {
     imgTitle: "Shadowing Saturn",
     height: 1018,
@@ -61,9 +61,9 @@ export let planets = [
   },
 ];
 
-export let weekIndexes = [3, 6, 2, 5, 1, 4, 0];
+export const weekIndexes = [3, 6, 2, 5, 1, 4, 0];
 
-export let themes = [
+export const themes = [
   "In the Days and Hours of Saturn thou canst perform experiments to summon the Souls from Hades, but only of those who have died a natural death. Similarly on these days and hours thou canst operate to bring either good or bad fortune to buildings; to have familiar Spirits attend thee in sleep; to cause good or ill success to business, possessions, goods, seeds, fruits, and similar things, in order to acquire learning; to bring destruction and to give death, and to sow hatred and discord.",
   "The Days and Hours of Jupiter are proper for obtaining honours, acquiring riches; contracting friendships, preserving health; and arriving at all that thou canst desire.",
   "In the Days and Hours of Mars thou canst make experiments regarding War; to arrive at military honour; to acquire courage; to overthrow enemies; and further to cause ruin, slaughter, cruelty, discord; to wound and to give death.",
@@ -73,7 +73,7 @@ export let themes = [
   "The Days and Hours of the Moon are good for embassies; voyages envoys; messages; navigation; reconciliation; love; and the acquisition of merchandise by water. ",
 ];
 
-export let grouping = [
+export const grouping = [
   {
     planets: [0, 2],
     text: "The Hours of Saturn, of Mars, and of the Moon are alike good for communicating and speaking with Spirits; as those of Mercury are for recovering thefts by the means of Spirits.",
@@ -107,4 +107,11 @@ export let grouping = [
     planets: [4],
     text: "The Hours of Venus are furthermore useful for lots, poisons, all things of the nature of Venus, for preparing powders provocative of madness and the like things.",
   },
+];
+
+export const pathLinks = [
+  { path: "/", title: "Home" },
+  { path: "/planetarium", title: "Planetarium" },
+  { path: "/about", title: "About" },
+  { path: '/portfolio', title: 'Portfolio' }
 ];

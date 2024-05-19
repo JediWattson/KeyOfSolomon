@@ -1,25 +1,17 @@
 'use client'
-import React from 'react'
-
+import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
-
+import { pathLinks } from "../../lib/constants";
 import styles from "./styles.module.css";
-
-const pathLinks = [
-  { path: "/", title: "Home" },
-  { path: "/planetarium", title: "Planetarium" },
-  { path: "/about", title: "About" },
-  { path: '/portfolio', title: 'Portfolio' }
-];
 
 function Header() {
   const path = usePathname();
   const links = pathLinks.filter(({ path: titlePath }) => path !== titlePath);
+
   return (
     <div className={styles.header}>
-      <h2 className={styles.title}>{"The Index of Solomon"}</h2>
+      <h2 className={styles.title}>{"FamTrees"}</h2>
       <div className={styles.linkGroup}>
         {links.map(({ path, title }, i) => (
           <Fragment key={i}>

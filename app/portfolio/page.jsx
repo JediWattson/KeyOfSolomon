@@ -11,7 +11,10 @@ const handleInit = async (setManifest) => {
 export const metadata = {
     openGraph: {
         title: "Famtrees - Portfolio",
-        description: `Here's a showcase of some 3d assets I've been working on`
+        description: `Here's a showcase of some 3d assets I've been working on`,
+        images: [
+            { url: "https://famtrees.net/demon-gallon.png" }
+        ]
     }
 }
 

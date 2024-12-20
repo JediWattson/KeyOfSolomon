@@ -45,10 +45,16 @@ export const AnalyticsProvider = ({ children }) => {
 		readStream(res.body, setAnalysis)
 	}
 
+	const handleClose = () => setAnalysis("")
+
 	return (
 		<AnalyticsContext.Provider value={{ handleEvent, handleSubmit }}>
 			{analysis !== "" 
-				? <Card title="Analysis of events" subtitle={analysis} />
+				? <Card 
+					onClose={handleClose}
+					title="Analysis of events" 
+					subtitle={analysis} 
+				/>
 				: children
 			}
 		</AnalyticsContext.Provider>

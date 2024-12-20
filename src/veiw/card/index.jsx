@@ -26,11 +26,22 @@ function Card({
   title,
   subtitle,
   footer,
+	onClose 
 }) {
   return (
     <div className={styles.cardContainer}>
-      <h1>{title}</h1>
-      {subtitle && <h4><pre>{subtitle}</pre></h4>}
+      <div className={styles.headerContainer}>
+	  	<h1>{title}</h1>
+	  {onClose && (
+			<div 
+				onClick={onClose}
+				className={styles.closeButton}
+			>
+				X
+		  </div>
+	  )}
+      </div>
+	  {subtitle && <h4><pre>{subtitle}</pre></h4>}
 	  {img && (
 		<Image
 			className={styles.cardImg}

@@ -1,4 +1,4 @@
-import Canvas from "../../src/canvas";
+import Canvas from '../../src/canvas';
 
 function WebGPU() {
     return <Canvas />;

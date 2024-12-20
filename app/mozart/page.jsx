@@ -1,7 +1,7 @@
-import Mozart from '../../src/mozart' 
+import Mozart from '../../src/mozart';
 
 const MozartPage = () => {
-	return <Mozart /> 	
-}
+    return <Mozart />;
+};
 
-export default MozartPage
+export default MozartPage;

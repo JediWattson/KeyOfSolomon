@@ -1,41 +1,41 @@
 {
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint && npx prettier --write ."
-  },
-  "dependencies": {
-    "@react-three/drei": "^9.105.6",
-    "@react-three/fiber": "^8.16.6",
-    "@react-three/postprocessing": "^2.16.2",
-    "@types/three": "^0.164.0",
-    "dotenv": "^16.0.3",
-    "jose": "^4.12.0",
-    "next": "^14.0.4",
-    "openai": "^3.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sharp": "^0.31.2",
-    "three": "^0.164.1",
-    "uuid": "^9.0.0",
-    "webgpu-fun": "^0.2.20"
-  },
-  "devDependencies": {
-    "@types/node": "18.7.23",
-    "@types/react": "^17.0.19",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@webgpu/types": "^0.1.40",
-    "eslint": "^8.24.0",
-    "eslint-config-next": "^14.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-react": "^7.31.8",
-    "prettier": "2.8.1",
-    "ts-shader-loader": "^2.0.2",
-    "typescript": "4.7"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint && npx prettier --write ."
+    },
+    "dependencies": {
+        "@react-three/drei": "^9.105.6",
+        "@react-three/fiber": "^8.16.6",
+        "@react-three/postprocessing": "^2.16.2",
+        "@types/three": "^0.164.0",
+        "dotenv": "^16.0.3",
+        "jose": "^4.12.0",
+        "next": "^14.0.4",
+        "prettier-eslint": "^16.3.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "sharp": "^0.31.2",
+        "three": "^0.164.1",
+        "uuid": "^9.0.0",
+        "webgpu-fun": "^0.2.20"
+    },
+    "devDependencies": {
+        "@types/node": "18.7.23",
+        "@types/react": "^17.0.19",
+        "@typescript-eslint/eslint-plugin": "^5.38.1",
+        "@webgpu/types": "^0.1.40",
+        "eslint": "^8.24.0",
+        "eslint-config-next": "^14.0.4",
+        "eslint-config-prettier": "^8.10.0",
+        "eslint-config-standard-with-typescript": "^23.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.3.0",
+        "eslint-plugin-react": "^7.31.8",
+        "prettier": "^2.8.1",
+        "ts-shader-loader": "^2.0.2",
+        "typescript": "4.7"
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

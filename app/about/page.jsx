@@ -1,7 +1,7 @@
-import About from "../../src/about";
+import About from '../../src/about';
 
 const AboutPage = () => {
-  return <About />;
+    return <About />;
 };
 
 export default AboutPage;

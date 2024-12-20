@@ -1,19 +1,19 @@
 .buttonContainer {
-	box-shadow: 4px 4px 12px #6f749d;
-	cursor: pointer;
-  background: #0a1869;
-  opacity: 0.7;
-  color: white;
-  border-radius: 8px;
-  padding: 24px;
-  font-size: 22px;
+    box-shadow: 4px 4px 12px #6f749d;
+    cursor: pointer;
+    background: #0a1869;
+    opacity: 0.7;
+    color: white;
+    border-radius: 8px;
+    padding: 24px;
+    font-size: 22px;
 }
 
 .large {
-  height: 420px;
+    height: 420px;
 }
 
 .disabled {
-  background: #ff2e2e;
-  box-shadow: 2px 2px 8px #313c06;
+    background: #ff2e2e;
+    box-shadow: 2px 2px 8px #313c06;
 }

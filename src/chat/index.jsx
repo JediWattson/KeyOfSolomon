@@ -1,68 +1,71 @@
-'use client'
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import Button from "../veiw/button";
-import Textarea from "../veiw/textarea";
+import React, { useEffect, useRef, useState } from 'react';
+import Button from '../veiw/button';
+import Textarea from '../veiw/textarea';
 
-import styles from "./style.module.css";
+import styles from './style.module.css';
 
-const postOracle = async (text) => {
-  const res = await fetch("/api/chat", {
-    method: "POST",
-    body: JSON.stringify({ text }),
-  });
-  const data = await res.json();
+const postOracle = async text => {
+    const res = await fetch('/api/chat', {
+        method: 'POST',
+        body: JSON.stringify({ text }),
+    });
+    const data = await res.json();
 
-  if (data.text === "") {
-    data.text = "Try again!";
-  }
+    if (data.text === '') {
+        data.text = 'Try again!';
+    }
 
-  speechSynthesis.speak(new SpeechSynthesisUtterance(data.text));
-  return data.text;
+    speechSynthesis.speak(new SpeechSynthesisUtterance(data.text));
+    return data.text;
 };
 
 const Chat = () => {
-  const [oracleSays, setOracle] = useState([]);
-  const textValueRef = useRef({ value: "" });
-  const chatWindowRef = useRef(null);
+    const [oracleSays, setOracle] = useState([]);
+    const textValueRef = useRef({ value: '' });
+    const chatWindowRef = useRef(null);
 
-  const handleRef = (ref) => {
-    if (!ref) return;
-    ref.scrollTop = ref.scrollHeight;
-  };
-
-  useEffect(() => {
-    const init = async () => {
-      const text = await postOracle();
-      setOracle([text]);
+    const handleRef = ref => {
+        if (!ref) return;
+        ref.scrollTop = ref.scrollHeight;
     };
-    init();
-  }, []);
 
-  const handleClick = async () => {
-    const { value } = textValueRef.current;
-    textValueRef.current.value = "";
-    const chatArr = [...oracleSays, `Detective: ${value}`];
-    setOracle(chatArr);
-    const text = await postOracle(chatArr);
-    setOracle([...chatArr, text]);
-  };
-  return (
-    <>
-      <div ref={handleRef} className={styles.textBox}>
-        {oracleSays.map((o, i) => (
-          <p key={i}>
-            {o}
-            <br />
-          </p>
-        ))}
-      </div>
-      <div className={styles.actions}>
-        <Button onClick={handleClick} text="Send" />
-        <Textarea textValueRef={textValueRef} className={styles.textarea} />
-      </div>
-    </>
-  );
+    useEffect(() => {
+        const init = async () => {
+            const text = await postOracle();
+            setOracle([text]);
+        };
+        init();
+    }, []);
+
+    const handleClick = async () => {
+        const { value } = textValueRef.current;
+        textValueRef.current.value = '';
+        const chatArr = [...oracleSays, `Detective: ${value}`];
+        setOracle(chatArr);
+        const text = await postOracle(chatArr);
+        setOracle([...chatArr, text]);
+    };
+    return (
+        <>
+            <div ref={handleRef} className={styles.textBox}>
+                {oracleSays.map((o, i) => (
+                    <p key={i}>
+                        {o}
+                        <br />
+                    </p>
+                ))}
+            </div>
+            <div className={styles.actions}>
+                <Button onClick={handleClick} text="Send" />
+                <Textarea
+                    textValueRef={textValueRef}
+                    className={styles.textarea}
+                />
+            </div>
+        </>
+    );
 };
 
 export default Chat;

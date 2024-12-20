@@ -1,24 +1,24 @@
 version: 2
 
 jobs:
-  deploy:
-    machine:
-      enabled: true
-    steps:
-      - run:
-          name: Deploy Over SSH
-          command: |
-            ssh $SSH_USER@$SSH_HOST "
-              cd git/KeyOfSolomon &
-              npm run build &
-              npm run start 
-            "
+    deploy:
+        machine:
+            enabled: true
+        steps:
+            - run:
+                  name: Deploy Over SSH
+                  command: |
+                      ssh $SSH_USER@$SSH_HOST "
+                        cd git/KeyOfSolomon &
+                        npm run build &
+                        npm run start 
+                      "
 
 workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - deploy:
-          filters:
-            branches:
-              only: main # only deploy on the master branch
+    version: 2
+    build-and-deploy:
+        jobs:
+            - deploy:
+                  filters:
+                      branches:
+                          only: main # only deploy on the master branch

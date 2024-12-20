@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./style.module.css";
+import styles from './style.module.css';
 
-const Textarea = ({ textValueRef, className = "" }) => {
-  return (
-    <textarea
-      ref={textValueRef}
-      className={`${className} ${styles.textareaContainer}`}
-    />
-  );
+const Textarea = ({ textValueRef, className = '' }) => {
+    return (
+        <textarea
+            ref={textValueRef}
+            className={`${className} ${styles.textareaContainer}`}
+        />
+    );
 };
 
 export default Textarea;

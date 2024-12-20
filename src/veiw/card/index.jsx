@@ -31,17 +31,19 @@ function Card({
     <div className={styles.cardContainer}>
       <h1>{title}</h1>
       {subtitle && <h4>{subtitle}</h4>}
-      <Image
-        className={styles.cardImg}
-        height={img.height}
-        width={img.width}
-        src={img.src}
-        alt={img.alt}
-        placeholder="blur"
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(
-          shimmer(img.height, img.width)
-        )}`}
-      />
+	  {img && (
+		<Image
+			className={styles.cardImg}
+			height={img.height}
+			width={img.width}
+			src={img.src}
+			alt={img.alt}
+			placeholder="blur"
+			blurDataURL={`data:image/svg+xml;base64,${toBase64(
+			  shimmer(img.height, img.width)
+			)}`}
+		  />
+	  )}
       {footer && (
         <>
           <h2>{footer.title}</h2>

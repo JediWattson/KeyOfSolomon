@@ -113,5 +113,6 @@ export const pathLinks = [
   { path: "/", title: "Home" },
   { path: "/planetarium", title: "Planetarium" },
   { path: "/about", title: "About" },
-  { path: '/portfolio', title: 'Portfolio' }
+  { path: '/portfolio', title: 'Portfolio' },
+  { path: "/mozart", title: "Mozart" }
 ];

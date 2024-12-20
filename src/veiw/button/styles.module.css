@@ -1,5 +1,6 @@
 .buttonContainer {
-  box-shadow: 2px 2px 8px #d7d7fd;
+	box-shadow: 4px 4px 12px #6f749d;
+	cursor: pointer;
   background: #0a1869;
   opacity: 0.7;
   color: white;

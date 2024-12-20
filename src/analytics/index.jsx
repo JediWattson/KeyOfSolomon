@@ -4,7 +4,8 @@ import AnalyticsContext from './context'
 const Analytics = ({ children, id, description }) => {
 	const { handleEvent } = useContext(AnalyticsContext)
 	return (
-		<div 
+		<div
+			style={{ cursor: "pointer" }}
 			data-analytics-id={id}
 			data-description={description}
 			onMouseLeave={e => handleEvent(e, "mouse-leave")}

@@ -30,7 +30,7 @@ function Card({
   return (
     <div className={styles.cardContainer}>
       <h1>{title}</h1>
-      {subtitle && <h4>{subtitle}</h4>}
+      {subtitle && <h4><pre>{subtitle}</pre></h4>}
 	  {img && (
 		<Image
 			className={styles.cardImg}

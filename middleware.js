@@ -4,10 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 
 let userCount = 0
 const sessionKey = "session-id";
-export function middleware(request) {
+export async function middleware(request) {
   const nextRes = NextResponse.next()
   const path = request.nextUrl.pathname
-  let sessionId = cookies().get(sessionKey)?.value
+  let sessionId = (await cookies()).get(sessionKey)?.value
   if (!sessionId) {
     sessionId = uuidv4();
     nextRes.headers.set('Set-Cookie', `${sessionKey}=${sessionId}; Path=/; HttpOnly`);  

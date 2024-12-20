@@ -71,7 +71,7 @@ export async function POST(req) {
     const { seq } = await req.json();
 
     let stream;
-    if (!process.env.XAI_API_KEY) {
+    if (process.env.XAI_API_KEY) {
         const res = await fetch(
             'https://api.x.ai/v1/chat/completions',
             makeOptions(seq),
